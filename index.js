@@ -4,102 +4,62 @@ const fs = require('fs');
 const { generateMarkdown } = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
+function checkIfBlank(input) {
+    if (input === '') {
+        return 'Answers cannot be blank!';
+    } else {
+        return true;
+    }
+}
+
 const questions = [
     {
         type: 'input',
         message: 'What is the title of your project?',
         name: 'title',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'input',
         message: 'Please give a description of your project:',
         name: 'description',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'input',
         message: 'Please enter installation instructions for your project:',
         name: 'installation',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'input',
         message: 'Please enter usage information for your project:',
         name: 'usage',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'input',
         message: 'Please enter any contribution guidelines for your project:',
         name: 'contribution',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'input',
         message: 'Please enter any tests for your project here:',
         name: 'tests',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'input',
         message: 'What is your github username?',
         name: 'username',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'input',
         message: 'What is your email address?',
         name: 'email',
-        validate: (input) => {
-            if (input === '') {
-                return 'Answers cannot be blank!';
-            } else {
-                return true;
-            }
-        }
+        validate: checkIfBlank
     },
     {
         type: 'list',
