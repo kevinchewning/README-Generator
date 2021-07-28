@@ -119,13 +119,10 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    var data;
-
-    inquirer
+   inquirer
         .prompt(questions)
         .then((response) => {
-            data = response;
-            writeToFile('README.md', generateMarkdown(data));
+            writeToFile('README.md', generateMarkdown(response));
         });
 }
 
